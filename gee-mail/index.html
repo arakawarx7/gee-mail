@@ -1,0 +1,158 @@
+<html>
+	<head>
+		<script src="js/mail-generator.js"></script>
+		<link href="css/style.css" rel="stylesheet" media="screen">
+    <script>
+      window.onload = function(){
+        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
+        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+     console.log(subject);
+     console.log(sender);     // test to make sure all arrays are working in correct order
+     console.log(body);
+     console.log(getRandomDate());  // test random date function
+
+
+     function senderF(columns){		//sender colums function
+     	for(i=0;i<columns.length;i++){ // make a for loop to iterate through all the array
+
+     var senderBox = document.createElement('div'); //create an element to put the array in
+     senderBox.className = "sender"; //create the className for the element
+     senderBox.innerHTML = columns[i];//connect the array with the element and display  array innerHTML
+     senderColumn.appendChild(senderBox); //connect the new element made to an existing element 
+		}
+	}
+	senderF(sender); // start the function
+
+
+
+	function subjectF(columns){
+     	for(i=0;i<columns.length;i++){
+     		
+
+
+     var subjectBox = document.createElement('div');
+     subjectBox.className = "subject";
+     subjectBox.innerHTML = columns[i];
+     subjectColumn.appendChild(subjectBox);
+        		
+     		//function bodyFunction() {
+    		//confirm(body[1]);
+    		
+
+    		//	document.getElementById("subjectColumn").innerHTML = body[subject.length];
+     		
+console.log(body[i]);
+
+var bodyBox = document.createElement('div');
+     		bodyBox.className = "body";
+    		 subjectColumn.appendChild(bodyBox);
+
+     		 document.getElementById("subjectColumn").addEventListener("click", bodyFunction);
+
+
+
+
+
+	 var dateBox = document.createElement('div'); //date column
+     dateBox.className = "date";
+     dateBox.innerHTML = getRandomDate();
+     dateColumn.appendChild(dateBox);
+		
+
+		}
+		
+
+
+				function bodyFunction()	{
+					
+			alert(body[7]); // when I put 'i' inside the [] is becomes undefined. Even if I put this function inside the senderF functon it still says undefined.
+					 
+			 }
+		
+		}
+				    		
+
+
+	subjectF(subject);
+		
+			var emailCounter = subject.length;
+						
+						console.log(emailCounter);
+						var counter = document.createElement('div');
+							counter.className ="counter";
+							counter.innerHTML = "Inbox " + emailCounter;
+							inboxCount.appendChild(counter);
+
+
+
+
+						//function mailF(){
+							var mail = {};
+							//mail.date = getRandomDate();
+							mail.subject = subject;
+
+							mail.sender = sender;
+							mail.body = body;
+							//return mailF;
+						//}
+
+						console.log(mail);
+						var arrayMail =[];
+						console.log(arrayMail);
+						arrayMail.push(mail);
+						console.log(arrayMail);
+
+
+
+function mailF(a,b,c){
+     	for(i=0;i<b.length;i++){
+
+     var mailDislplay = document.createElement('div');
+
+     mailDislplay.className = "mail";
+     mailDislplay.innerHTML = a[i]+ "____________________________"+b[i]+"____________________________"+c;
+    // mailDislplay.innerHTML = mailC[i].date;
+
+     newMail.appendChild(mailDislplay);	     
+		}
+
+	}
+			mailF(sender,subject,getRandomDate());
+
+
+				document.getElementById("newMail").addEventListener("click", bodyFunction);
+				
+				function bodyFunction()	{
+
+						alert(body[i]);
+						}
+
+ };
+    </script>
+	</head>
+	<body>
+		<div class="container" id="main">
+			Build Me!
+		</div>
+			<nav>
+				<img id= "logo" src="assets/imgres.png">
+				<div id = "inboxCount"></div>
+			</nav>	 
+					<div>
+					<table>
+						<tr>
+							<th> Sender</th><th>Subject</th><th>Date</th> 
+						</tr>
+							<td id = "senderColumn"></td><td id ="subjectColumn"><div id = "subjectColumnBody"></div></td><td id ="dateColumn"></td>
+					</table>
+					</div>
+
+						<table>
+							<tr>
+								<div id = "newMail"></div>
+							</tr>
+						</table>
+
+
+	</body>
+</html>

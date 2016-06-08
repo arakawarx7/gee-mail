@@ -1,0 +1,30 @@
+#subjectColumn, #dateColumn{
+	
+	padding-left: 30px;
+}
+table{
+	width:100%;
+	padding-left: 200px;
+
+}
+.counter{
+	float: right;
+	padding-right: 50px;
+	border-bottom: 2px solid lightgray ;
+}
+
+.subject, .date, .sender{
+	padding-bottom:  30px;
+
+	
+}
+.subject:hover,.date:hover, .sender:hover, .mail:hover{
+	background-color: lightgrey;
+}
+
+#logo{
+	height: 80px;
+}
+nav{
+	display: inline;
+}
