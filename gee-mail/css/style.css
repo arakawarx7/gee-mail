@@ -1,10 +1,31 @@
+body{
+		background:url(dev.png) ;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+
+		
+	    }
+
+
+#background{
+	background-image: url(devn.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-attachment: fixed;
+}
+
+
 #subjectColumn, #dateColumn{
 	
 	padding-left: 30px;
+	
 }
 table{
+	
 	width:100%;
 	padding-left: 200px;
+	
 
 }
 .counter{
@@ -14,12 +35,21 @@ table{
 }
 
 .subject, .date, .sender{
-	padding-bottom:  30px;
-
+	padding-top:  15px;
+	padding-bottom:  15px;
+border-bottom: 2px dotted lightblue;
 	
 }
-.subject:hover,.date:hover, .sender:hover, .mail:hover{
-	background-color: lightgrey;
+.subject:hover, .mail:hover{
+	background-color: lightgreen;
+	
+}
+
+.date:hover{
+	background-color: lightyellow;
+}
+.sender:hover{
+	background-color: lightblue;
 }
 
 #logo{
@@ -27,4 +57,7 @@ table{
 }
 nav{
 	display: inline;
+}
+.mail{
+	 padding-left: 200px;
 }
