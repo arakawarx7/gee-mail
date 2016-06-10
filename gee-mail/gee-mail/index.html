@@ -57,7 +57,7 @@
 						 
 				 }			
 		}
-					console.log(body[body.length]);    		
+					console.log(body);    		
 			senderF(sender, subject); // start the function
 
 				
@@ -70,29 +70,29 @@
 					inboxCount.appendChild(counter);	
 
 
-
-			function generateMail(newMail){
-				var mail = {};
-				//mail.date = getRandomDate();
-				mail.subject = subject;
-
-				mail.sender = sender;
-				mail.body = body;
-				return generateMail;
-			}
-
-			//	console.log(mail);
-				var arrayMail =[];
-				console.log(arrayMail);
+		var mail = {};			
+			function generateMail(){
+			for(h=0;h<10;h++){	
+							
+				mail.sender = sender[h];
+				mail.subject = subject[h];				
+				mail.body = body[h];
+				mail.date = getRandomDate();
+				console.log(mail);				
+				}						
+			}	
+			generateMail();
+				
+		var arrayMail =[]; 
 			function loadMail(){
-			for(var j = 0; j < 10; j++){
-				arrayMail.push(mail);
+				for(g=0;g<10;g++){					
+				arrayMail.push(mail);						
 				}
-			}	//arrayMail.push(mail);
-			
+			}
+			loadMail();
+			console.log(arrayMail);		
 
-
-
+		
 		function mailF(a,b,c){
 		     	for(i=0;i<b.length;i++){
 
@@ -113,8 +113,11 @@
 						
 						function bodyFunction()	{
 
-								alert(body[body.length]);
+								alert(body[i]);
 						}
+			
+
+			
 
 		 };
     </script>
