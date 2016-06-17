@@ -1,0 +1,64 @@
+body{
+		background:url(bothdev.png) ;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+
+		
+	    }
+
+
+
+
+#subjectColumn, #dateColumn, #randomSubjectColumn, #randomDateColumn{
+	
+	padding-left: 30px;
+	
+}
+table{
+	
+	width:100%;
+	padding-left: 200px;
+	
+
+}
+.counter{
+	float: right;
+	padding-right: 50px;
+	border-bottom: 2px solid red ;
+}
+
+.subject, .date, .sender, .randomSender, .randomSubject, .randomDate
+{
+	padding-top:  15px;
+	padding-bottom:  15px;
+	border-bottom: 2px dotted lightblue;
+
+}
+
+.sender{
+	padding-top: 16px;
+}
+
+
+.subject:hover, .mail:hover, .randomSubject:hover{
+	background-color: lightgreen;
+	
+}
+
+.date:hover, .randomDate:hover{
+	background-color: lightyellow;
+}
+.sender:hover, .randomSender:hover{
+	background-color: lightblue;
+}
+
+#logo{
+	height: 80px;
+}
+nav{
+	display: inline;
+}
+.mail{
+	 padding-left: 200px;
+}
