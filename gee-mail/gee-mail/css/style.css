@@ -1,0 +1,63 @@
+body{
+		background:url(dev.png) ;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+
+		
+	    }
+
+
+#background{
+	background-image: url(devn.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-attachment: fixed;
+}
+
+
+#subjectColumn, #dateColumn{
+	
+	padding-left: 30px;
+	
+}
+table{
+	
+	width:100%;
+	padding-left: 200px;
+	
+
+}
+.counter{
+	float: right;
+	padding-right: 50px;
+	border-bottom: 2px solid lightgray ;
+}
+
+.subject, .date, .sender{
+	padding-top:  15px;
+	padding-bottom:  15px;
+border-bottom: 2px dotted lightblue;
+	
+}
+.subject:hover, .mail:hover{
+	background-color: lightgreen;
+	
+}
+
+.date:hover{
+	background-color: lightyellow;
+}
+.sender:hover{
+	background-color: lightblue;
+}
+
+#logo{
+	height: 80px;
+}
+nav{
+	display: inline;
+}
+.mail{
+	 padding-left: 200px;
+}
