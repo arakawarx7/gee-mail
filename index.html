@@ -10,24 +10,39 @@
 	     console.log(sender);     // test to make sure all arrays are working in correct order
 	     console.log(body);
 	     console.log(getRandomDate());  // test random date function
-	     console.log(geemails);
+	     console.log("geemails", geemails);
 	     console.log(getNewMessage());
+	     var k = 1;
+	     function senderF(mailColumns){		//sender colums function
+	     	for(i=0;i<mailColumns.length;i++){ // make a for loop to iterate through all the array
 
-	     function senderF(columnsA, columnsB){		//sender colums function
-	     	for(i=0;i<columnsA.length;i++){ // make a for loop to iterate through all the array
-
-		     var senderBox = document.createElement('li'); //create an element to put the array in
+		     var senderBox = document.createElement('div'); //create an element to put the array in
 		     senderBox.className = "sender"; //create the className for the element
-		     senderBox.innerHTML = columnsA[i];//connect the array with the element and display  array innerHTML
+		     senderBox.innerHTML = (k++) + ".   "  + mailColumns[i].sender;//connect the array with the element and display  array innerHTML
 
 		     senderColumn.appendChild(senderBox); //connect the new element made to an existing element 
 
 			     		
 		     var subjectBox = document.createElement('div');
 		     subjectBox.className = "subject";
-		     subjectBox.innerHTML = columnsB[i];
-		     subjectColumn.appendChild(subjectBox);
-	        		
+		     subjectBox.innerHTML = mailColumns[i].subject;
+	   	     subjectColumn.appendChild(subjectBox);
+
+	   	     var subjectBoxTest = document.createElement('div');
+		     subjectBoxTest.className = "subjectBoxTest";
+		     subjectBoxTest.innerHTML = mailColumns[i].body;
+	   	     subjectBox.appendChild(subjectBoxTest);
+		     
+
+
+
+		     /*var bodyBox = document.createElement('div');
+		     bodyBox.className = "bodyB";
+		     bodyBox.innerHTML = mailColumns[i].body;
+		     subjectColumnBody.appendChild(bodyBox);
+
+	        */		
+	     
 	     		//function bodyFunction() {
 	    		//confirm(body[1]);
 	    		
@@ -36,31 +51,33 @@
 	     		
 			console.log(body[i]);
 
-			var bodyBox = document.createElement('div');
-	     		bodyBox.className = "body";
-	    		 subjectColumn.appendChild(bodyBox);
-
-	     		 document.getElementById("subjectColumn").addEventListener("click", bodyFunction);
-	     		 document.getElementById("senderColumn").addEventListener("click", bodyFunction);
-	     		 document.getElementById("dateColumn").addEventListener("click", bodyFunction);
+				 
+					
 
 
 				 var dateBox = document.createElement('div'); //date column
 			     dateBox.className = "date";
 			     dateBox.innerHTML = getRandomDate();
 			     dateColumn.appendChild(dateBox);
-					
 
 			}
 
+
+
+
+
+
 					function bodyFunction()	{
+				//	for(i=0;i<body.length;i++){
+							console.log(body);
 						
-				alert(body[2]); // when I put 'i' inside the [] is becomes undefined. Even if I put this function inside the senderF functon it still says undefined.
+						alert(geemails.body);
+				 // when I put 'i' inside the [] is becomes undefined. Even if I put this function inside the senderF functon it still says undefined.
 						 
 				 }			
 		}
 					console.log(body);    		
-			senderF(sender, subject); // invokes the function
+			senderF(geemails); // invokes the function
 
 				
 				var emailCounter = subject.length;
@@ -74,12 +91,59 @@
 				console.log(emailCounter);
 				var counter = document.createElement('div');
 					counter.className ="counter";
-					counter.innerHTML = "Inbox " + (emailCounter + randomCounter);
+					counter.innerHTML = "Inbox " + emailCounter;
 					inboxCount.appendChild(counter);	
 
-					
+					var m = 11;
+setInterval(function(){
+	var newMessage = getNewMessage();
 
-			var randomNewMessageArray = [];
+		geemails.push(newMessage);
+		//console.log("geemailslength", geemails.length);
+		
+		var randomSender = document.createElement('div');
+				     randomSender.className = "randomSender";
+				     randomSender.innerHTML = (m++) + ".   " + newMessage.sender;
+				     randomSenderColumn.appendChild(randomSender);
+
+		var randomSubject = document.createElement('div');
+				     randomSubject.className = "randomSubject";
+				     randomSubject.innerHTML = newMessage.subject;
+				     randomSubjectColumn.appendChild(randomSubject);
+
+		var randomBody = document.createElement('div');
+				     randomBody.className = "randomSubjectColumnBody";
+				     randomBody.innerHTML = newMessage.body;
+				     randomSubject.appendChild(randomBody);
+
+		 var randomDate = document.createElement('div');
+				     randomDate.className = "randomDate";
+				     randomDate.innerHTML =newMessage.date;
+				     randomDateColumn.appendChild(randomDate);
+
+		
+
+					counter.innerHTML = "Inbox " +(1 + emailCounter++);
+					inboxCount.appendChild(counter);
+
+					alert("You got Mail!!!!");
+
+					mailbiggie.getElementById = mailbiggie;
+					inboxCount.appendChild(mailbiggie);
+}, 3000); 
+
+
+/*setInterval(function(){
+	var newMessage = getNewMessage();
+
+		geemails.push(newMessage);
+		//console.log("geemailslength", geemails.length);
+		
+		senderF(sender,subject);
+
+
+}, 3000); */
+		/*	var randomNewMessageArray = [];
 					
 					console.log(randomNewMessageArray);
 					for(i=0;i<5;i++){
@@ -136,8 +200,17 @@
 			loadMail();
 			console.log(arrayMail);		
 
+
+
+
+
+
+
+
+
+
 		
-		function mailF(a,b,c){
+/*		function mailF(a,b,c){
 		     	for(i=0;i<b.length;i++){
 
 		     var mailDislplay = document.createElement('div');
@@ -161,7 +234,7 @@
 						}
 			
 
-							
+							*/
 			
 
 		 };
@@ -169,6 +242,20 @@
 	</head>
 	<body><div id = "background"></div>
 		<div class="container" id="main">
+		<audio controls autoplay>
+  <source src="assets/biggie.mp3" type="audio/mp3">
+  <source src="assets/biggie.mp3" type="audio/mpeg">
+  <source src="assets/biggie.mp3" type="audio/mp3">
+  <source src="assets/biggie.mp3" type="audio/mpeg">
+
+</audio>
+
+<audio id = "mailbiggie">
+  <source src="assets/mailbiggie.mp3" type="audio/mp3">
+  <source src="assets/mailbiggie.mp3" type="audio/mpeg">
+  
+
+</audio>
 			Build Me!
 		</div>
 			<nav>
@@ -180,9 +267,19 @@
 						<tr>
 							<th> Sender</th><th>Subject</th><th>Date</th> 
 						</tr>
-						<td><ol id = "senderColumn"></ol></td><td id ="subjectColumn"><div id = "subjectColumnBody"></div></td><td id ="dateColumn"></td>
 						<tr>
-						<td><ol start="11" id = "randomSenderColumn"></ol></td><td id = "randomSubjectColumn"></td><td id = "randomDateColumn"></td>
+							<div id ="colorBG"><td id = "senderColumn"></td><td id ="subjectColumn"></td><td id ="dateColumn"></td>
+						</tr>
+						<tr>
+						
+							
+						</td>
+						</tr>
+					</table>
+					</div>
+					<table>
+						<tr>
+						<td id = "randomSenderColumn"></td><td id = "randomSubjectColumn"></td><td id = "randomDateColumn"></td>
 						</tr>
 					</table>
 					</div>

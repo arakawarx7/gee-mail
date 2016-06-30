@@ -12,13 +12,14 @@ body{
 
 #subjectColumn, #dateColumn, #randomSubjectColumn, #randomDateColumn{
 	
-	padding-left: 30px;
+	padding-left: 0px;
 	
 }
 table{
-	
+	background:rgba(106, 154, 251, 0.1);
 	width:100%;
-	padding-left: 200px;
+
+
 	
 
 }
@@ -28,30 +29,56 @@ table{
 	border-bottom: 2px solid red ;
 }
 
-.subject, .date, .sender, .randomSender, .randomSubject, .randomDate
-{
+.sender, .date,  .randomSender, .randomDate
+{	line-height: 20px;
 	padding-top:  15px;
 	padding-bottom:  15px;
 	border-bottom: 2px dotted lightblue;
 
 }
-
-.sender{
-	padding-top: 16px;
+.subject, .randomSubject{
+	line-height: 20px;
+	padding-top:  15px;
+	
+	border-bottom: 2px dotted lightblue;
 }
 
 
-.subject:hover, .mail:hover, .randomSubject:hover{
-	background-color: lightgreen;
+
+.sender:hover, .randomSender:hover{
+	background:rgba( 51, 153, 255,0.1);
+	font-weight: bold;
+}
+
+
+.date:hover, .randomDate:hover{
+	background:rgba(255, 0, 191,0.1);
+	font-weight: bold;
+}
+.subject:hover, .randomSubject:hover{
+	background: rgba(76, 175, 80, 0.1);
+	font-weight: bold;
+
+}
+.subjectBoxTest, .randomSubjectColumnBody{
+	width: 400px;
+font-size: 0px;
+font-weight: normal;
+line-height: 0px;
+padding-top:  0px;
+	padding-bottom:  15px;
+	
+}
+.subjectBoxTest:hover, .randomSubjectColumnBody:hover{
+	width: 500px;
+font-size: 16px;
+font-weight: normal;
+line-height: 20px;
+padding-top:  0px;
+	padding-bottom:  0px;
 	
 }
 
-.date:hover, .randomDate:hover{
-	background-color: lightyellow;
-}
-.sender:hover, .randomSender:hover{
-	background-color: lightblue;
-}
 
 #logo{
 	height: 80px;
@@ -61,4 +88,10 @@ nav{
 }
 .mail{
 	 padding-left: 200px;
+}
+.try{
+	background-color: purple;
+}
+audio{
+display: none;
 }
